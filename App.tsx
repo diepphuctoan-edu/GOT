@@ -109,12 +109,14 @@ export default function App() {
     }, 1000);
   };
 
-  const startGame = () => {
+  const startGame = async () => {
     // This is the most crucial part: unlock audio on the first user interaction.
-    unlockAudio();
+    await unlockAudio();
     
     playSound('start');
-    playBackgroundMusic();
+    setTimeout(() => {
+      playBackgroundMusic();
+    }, 3000);
     setBlueWidth(INITIAL_WIDTH);
     setCurrentQuestionIndex(0);
     setShuffledQuestions(shuffleArray(boCauHoi));
@@ -129,7 +131,7 @@ export default function App() {
       <header className="flex-shrink-0 w-full p-4 bg-gray-800/50 backdrop-blur-sm z-20">
         <div className="flex justify-between items-center max-w-6xl mx-auto">
           <h1 className="text-2xl font-bold text-blue-400">ĐỘI XANH</h1>
-          <h1 className="text-3xl font-bold tracking-wider">CUỘC CHIẾN LÃNH THỔ</h1>
+          <h1 className="text-3xl font-bold tracking-wider">CUỘC CHIẾN VƯƠNG QUYỀN</h1>
           <h1 className="text-2xl font-bold text-orange-400">ĐỘI CAM</h1>
         </div>
       </header>

@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuộc chiến Lãnh Thổ</title>
+    <title>Cuộc chiến Vương quyền</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +11,20 @@
     <style>
       body {
         font-family: 'Montserrat', sans-serif;
+      }
+      .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 20px;
+        top: -20px;
+        animation: fall linear infinite;
+        z-index: 100;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(105vh) rotate(720deg);
+        }
       }
     </style>
   <script type="importmap">

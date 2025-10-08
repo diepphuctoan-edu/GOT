@@ -1,6 +1,6 @@
-
 import React from 'react';
 import type { GameState, Team } from '../types';
+import Confetti from './Confetti';
 
 interface GameStatusProps {
   gameState: GameState;
@@ -26,9 +26,9 @@ const GameStatus: React.FC<GameStatusProps> = ({ gameState, winner, onStart }) =
     <div className="absolute inset-0 bg-black/80 z-30 flex flex-col justify-center items-center text-center p-8">
       {gameState === 'idle' && (
         <>
-          <h1 className="text-6xl font-bold mb-4">Cuộc chiến Lãnh Thổ</h1>
+          <h1 className="text-6xl font-bold mb-4">Cuộc chiến Vương quyền</h1>
           <p className="text-xl mb-8 max-w-2xl text-gray-300">
-            Hai đội sẽ trả lời câu hỏi để chiếm lãnh thổ của đối phương. Trả lời đúng, lãnh thổ của bạn sẽ mở rộng. Đội nào chiếm được toàn bộ màn hình sẽ chiến thắng!
+            Hai đội sẽ trả lời câu hỏi để tranh giành vương quyền. Trả lời đúng, lãnh thổ của bạn sẽ mở rộng. Đội nào chiếm được toàn bộ màn hình sẽ lên ngôi vương!
           </p>
           <button
             onClick={onStart}
@@ -41,9 +41,11 @@ const GameStatus: React.FC<GameStatusProps> = ({ gameState, winner, onStart }) =
 
       {gameState === 'finished' && (
         <>
+          {winner && <Confetti />}
           <h1 className="text-8xl font-bold mb-4">KẾT THÚC!</h1>
           {winner ? (
             <h2 className={`text-5xl font-bold mb-8 ${winnerInfo[winner].color}`}>
+              <span role="img" aria-label="crown" className="mr-4">👑</span>
               {winnerInfo[winner].name} THẮNG!
             </h2>
           ) : (

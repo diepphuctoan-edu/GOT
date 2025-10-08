@@ -1,5 +1,5 @@
 {
-  "name": "Cuộc chiến vương quyền",
-  "description": "Một trò chơi trắc nghiệm tốc độ cho 2 đội, nơi trả lời đúng sẽ giúp mở rộng lãnh thổ của đội mình. Trò chơi kết thúc khi một đội chiếm toàn bộ màn hình.",
+  "name": "Cuộc chiến Vương quyền",
+  "description": "Một trò chơi trắc nghiệm tốc độ cho 2 đội để tranh giành vương quyền. Trả lời đúng sẽ giúp mở rộng lãnh thổ và tiến gần hơn đến ngai vàng. Đội chiến thắng là đội chiếm được toàn bộ màn hình.",
   "requestFramePermissions": []
 }
